@@ -23,7 +23,9 @@ defmodule F1Web.TeamView do
       world_championship: team.world_championship,
       highest_race_finish: team.highest_race_finish,
       pole_position: team.pole_position,
-      fastest_lap: team.fastest_lap
+      fastest_lap: team.fastest_lap,
+      car_image_url: team.car_image_url,
+      team_image_url: team.team_image_url
     }
   end
 end

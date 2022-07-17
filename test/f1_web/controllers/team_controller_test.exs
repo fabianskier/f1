@@ -7,6 +7,7 @@ defmodule F1Web.TeamControllerTest do
 
   @create_attrs %{
     base: "some base",
+    car_image_url: "some car_image_url",
     chassis: "some chassis",
     entry: "some entry",
     fastest_lap: 42,
@@ -15,11 +16,13 @@ defmodule F1Web.TeamControllerTest do
     pole_position: 42,
     power_unit: "some power_unit",
     team_chief: "some team_chief",
+    team_image_url: "some team_image_url",
     technical_chief: "some technical_chief",
     world_championship: 42
   }
   @update_attrs %{
     base: "some updated base",
+    car_image_url: "some updated car_image_url",
     chassis: "some updated chassis",
     entry: "some updated entry",
     fastest_lap: 43,
@@ -28,10 +31,11 @@ defmodule F1Web.TeamControllerTest do
     pole_position: 43,
     power_unit: "some updated power_unit",
     team_chief: "some updated team_chief",
+    team_image_url: "some updated team_image_url",
     technical_chief: "some updated technical_chief",
     world_championship: 43
   }
-  @invalid_attrs %{base: nil, chassis: nil, entry: nil, fastest_lap: nil, highest_race_finish: nil, name: nil, pole_position: nil, power_unit: nil, team_chief: nil, technical_chief: nil, world_championship: nil}
+  @invalid_attrs %{base: nil, car_image_url: nil, chassis: nil, entry: nil, fastest_lap: nil, highest_race_finish: nil, name: nil, pole_position: nil, power_unit: nil, team_chief: nil, team_image_url: nil, technical_chief: nil, world_championship: nil}
 
   setup %{conn: conn} do
     {:ok, conn: put_req_header(conn, "accept", "application/json")}
@@ -54,6 +58,7 @@ defmodule F1Web.TeamControllerTest do
       assert %{
                "id" => ^id,
                "base" => "some base",
+               "car_image_url" => "some car_image_url",
                "chassis" => "some chassis",
                "entry" => "some entry",
                "fastest_lap" => 42,
@@ -62,6 +67,7 @@ defmodule F1Web.TeamControllerTest do
                "pole_position" => 42,
                "power_unit" => "some power_unit",
                "team_chief" => "some team_chief",
+               "team_image_url" => "some team_image_url",
                "technical_chief" => "some technical_chief",
                "world_championship" => 42
              } = json_response(conn, 200)["data"]
@@ -85,6 +91,7 @@ defmodule F1Web.TeamControllerTest do
       assert %{
                "id" => ^id,
                "base" => "some updated base",
+               "car_image_url" => "some updated car_image_url",
                "chassis" => "some updated chassis",
                "entry" => "some updated entry",
                "fastest_lap" => 43,
@@ -93,6 +100,7 @@ defmodule F1Web.TeamControllerTest do
                "pole_position" => 43,
                "power_unit" => "some updated power_unit",
                "team_chief" => "some updated team_chief",
+               "team_image_url" => "some updated team_image_url",
                "technical_chief" => "some updated technical_chief",
                "world_championship" => 43
              } = json_response(conn, 200)["data"]
