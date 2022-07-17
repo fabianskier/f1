@@ -4,6 +4,7 @@ defmodule F1.Padock.Team do
 
   schema "teams" do
     field :base, :string
+    field :car_image_url, :string
     field :chassis, :string
     field :entry, :string
     field :fastest_lap, :integer
@@ -12,10 +13,9 @@ defmodule F1.Padock.Team do
     field :pole_position, :integer
     field :power_unit, :string
     field :team_chief, :string
+    field :team_image_url, :string
     field :technical_chief, :string
     field :world_championship, :integer
-    field :car_image_url, :string
-    field :team_image_url, :string
 
     timestamps()
   end
