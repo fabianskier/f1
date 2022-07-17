@@ -14,6 +14,8 @@ defmodule F1.Padock.Team do
     field :team_chief, :string
     field :technical_chief, :string
     field :world_championship, :integer
+    field :car_image_url, :string
+    field :team_image_url, :string
 
     timestamps()
   end
@@ -21,7 +23,7 @@ defmodule F1.Padock.Team do
   @doc false
   def changeset(team, attrs) do
     team
-    |> cast(attrs, [:name, :base, :team_chief, :technical_chief, :chassis, :power_unit, :entry, :world_championship, :highest_race_finish, :pole_position, :fastest_lap])
-    |> validate_required([:name, :base, :team_chief, :technical_chief, :chassis, :power_unit, :entry, :world_championship, :highest_race_finish, :pole_position, :fastest_lap])
+    |> cast(attrs, [:name, :base, :team_chief, :technical_chief, :chassis, :power_unit, :entry, :world_championship, :highest_race_finish, :pole_position, :fastest_lap, :car_image_url, :team_image_url])
+    |> validate_required([:name, :base, :team_chief, :technical_chief, :chassis, :power_unit, :entry, :world_championship, :highest_race_finish, :pole_position, :fastest_lap, :car_image_url, :team_image_url])
   end
 end
