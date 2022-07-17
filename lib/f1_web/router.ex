@@ -24,7 +24,7 @@ defmodule F1Web.Router do
   scope "/api", F1Web do
     pipe_through :api
 
-    resources "/teams", TeamController, except: [:new, :edit]
+    resources "/teams", TeamController, except: [:edit]
   end
 
   # Enables LiveDashboard only for development
