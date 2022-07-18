@@ -52,7 +52,7 @@ if config_env() == :prod do
   port = String.to_integer(System.get_env("PORT") || "4000")
 
   config :f1, F1Web.Endpoint,
-    url: [scheme: "https", host: "radiant-waters-53331.herokuapp.com", port: 443],
+    url: [scheme: "https", host: "f1-api-fabianskier.herokuapp.com", port: 443],
     force_ssl: [rewrite_on: [:x_forwarded_proto]],
     http: [
       # Enable IPv6 and bind on all interfaces.
